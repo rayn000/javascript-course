@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>11u</title>
+</head>
+<body>
+  <script>
+    function removeLastTwoEgg(food) {
+
+      // const foodCopy = food.slice();
+      // const reversedFood = foodCopy.reverse();
+
+      const reversedFood = food.slice().reverse();
+
+      const item = [];
+      let eggsRemoved = 0;
+
+      for (let i = 0; i < reversedFood.length; i++) {
+
+        if (food[i] === 'egg' && eggsRemoved < 2) {
+          eggsRemoved++;
+          continue;
+        }
+        item.push(food[i]);
+      }
+      return item.reverse();
+    }
+
+    const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+
+    console.log(removeLastTwoEgg(foods));
+    console.log(foods);
+  </script>
+</body>
+</html>

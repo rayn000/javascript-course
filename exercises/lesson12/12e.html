@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>12e</title>
+</head>
+<body>
+  <button class="js-start-button">Start</button>
+
+  <button class="js-add-button">Add to cart</button>
+
+  <p class="js-message"></p>
+
+  <script>
+    document.querySelector('.js-start-button')
+      .addEventListener('click', () => {
+        updateButton();
+      });
+
+    document.querySelector('.js-message-button')
+      .addEventListener('click', () => {
+        message();
+      });
+    
+    function updateButton() {
+      const button = document.querySelector('.js-start-button');
+      
+      button.innerHTML = 'Loading...'
+      setTimeout(() => {
+        button.innerHTML = 'Finished!';
+      }, 1000);
+    }
+
+    function message() {
+      document.querySelector('.js-message')
+        .innerHTML = 'Added';
+        addButtonClicked = true;
+
+        setTimeout(() => {
+        message.innerHTML = '';
+        }, 2000);
+    }
+    
+  </script>
+</body>
+</html>

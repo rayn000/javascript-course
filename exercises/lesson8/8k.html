@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>8k</title>
+</head>
+<body>
+  <p>Guess Heads or Tails</p>
+  <button onclick="
+    playGame('heads');
+  ">Heads</button>
+
+  <button onclick="
+    playGame('tails');
+  ">Tails</button>
+
+  <script>
+    const score = JSON.parse(localStorage.getItem('score')) || {
+      wins: 0,
+      losses: 0
+    };
+
+    function playGame(guess) {
+      const computerMove = Math.random() <= 0.5 ? 'heads' : 'tails';
+
+      const result = computerMove === guess ? 'You win!' : 'You lose!';
+
+      if (result === 'You win!') {
+        score.wins = score.wins + 1;
+      } else if(result === 'You lose!') {
+        score.losses = score.losses + 1;
+      }
+
+      localStorage.setItem('score', JSON.stringify(score));
+
+      alert(`You guessed ${guess}. Computer picked ${computerMove}. ${result}
+Wins: ${score.wins}, Losses: ${score.losses}`);
+    }
+  </script>
+</body>
+</html>

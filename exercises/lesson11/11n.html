@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>11n</title>
+</head>
+<body>
+  <script>
+    function countWords(words) {
+      const result = {};
+
+      for (i = 0; i < words.length; i++) {
+        const word = words[i];
+
+        if (!result[word]) {
+          result[word] = 1;
+        } else {
+          result[word]++;
+        }
+      }
+      console.log(result);
+    }
+
+    countWords(['apple', 'grape', 'apple', 'apple']);
+
+    /*
+    const words = ['apple', 'grape', 'apple', 'apple'];
+
+    const result = {};
+
+    for (i = 0; i < words.length; i++) {
+      const word = words[i];
+
+      if (!result[word]) {
+        result[word] = 1;
+      } else {
+        result[word]++;
+      }
+    }
+    console.log(result);
+    */
+
+    /*
+    const one = 'one';
+    const two = 'two';
+
+    const object = {};
+
+    object[one] = 1;
+
+    console.log(object);
+    */
+  </script>
+</body>
+</html>

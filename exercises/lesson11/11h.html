@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>11h</title>
+</head>
+<body>
+  <script>
+    function addOne(array) {
+      const increaseByOne = [];
+
+      for (let i = 0; i < array.length; i++) {
+        const value = array[i];
+        increaseByOne.push(value + 1)
+      }
+      
+      console.log(increaseByOne);
+    }
+
+    addOne([1, 2, 3, 5]);
+    addOne([-2, -1, 0, 99]);
+  </script>
+</body>
+</html>

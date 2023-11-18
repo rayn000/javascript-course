@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>11c</title>
+</head>
+<body>
+  <script>
+    const nums = [10, 20, 30, 40, 88];
+
+    arraySwap(nums);
+
+    function arraySwap(array) {
+      const lastIndex = array.length - 1;
+      const lastValue = array[lastIndex];
+      const firstValue = array[0];
+
+      array[0] = lastValue;
+      array[lastIndex] = firstValue;
+
+      console.log(array);
+    }
+  </script>
+</body>
+</html>

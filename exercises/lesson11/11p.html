@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>11p</title>
+</head>
+<body>
+  <script>
+    const words = ['hello', 'world', 'search', 'good', 'search'];
+    let index = -1;
+
+    for (let i = 0; i < words.length; i++) {
+      const value = words[i];
+
+      if (value === 'search') {
+        index = i;
+        break;
+      }
+    }
+    console.log(index);
+  </script>
+</body>
+</html>

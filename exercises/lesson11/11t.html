@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>11t</title>
+</head>
+<body>
+  <script>
+    function removeLastTwoEgg(food) {
+
+      const reversedFood = food.reverse();
+      const item = [];
+      let eggsRemoved = 0;
+
+      for (let i = 0; i < reversedFood.length; i++) {
+
+        if (food[i] === 'egg' && eggsRemoved < 2) {
+          eggsRemoved++;
+          continue;
+        }
+        item.push(food[i]);
+      }
+      return item.reverse();
+    }
+
+    console.log(removeLastTwoEgg(['egg', 'apple', 'egg', 'egg', 'ham', 'oil', 'salt']));
+  </script>
+</body>
+</html>

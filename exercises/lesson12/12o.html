@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>12o</title>
+</head>
+<body>
+  <script>
+    function removeEgg(foods) {
+      let eggsRemoved = 0;
+
+      /*
+      let result = [];
+
+      foods.filter(value => {
+        if (value === 'egg' && eggsRemoved < 2) {
+          eggsRemoved++;
+          false;
+        } else {
+          result.push(value);
+        }
+      });
+      return result;
+      */
+
+      return foods.filter(value => {
+        
+        if (value === 'egg' && eggsRemoved < 2) {
+          eggsRemoved++;
+          return false;
+        }
+
+        return true;
+      });
+    }
+
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+  </script>
+</body>
+</html>

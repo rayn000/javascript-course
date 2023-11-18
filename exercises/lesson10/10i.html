@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>10i</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #020202;
+    }
+
+    .all-buttons {
+      font-size: 26px;
+      height: 60px;
+      width: 60px;
+      color: white;
+      background-color: #333333;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+
+    .orange-button {
+      background-color: orange;
+    }
+
+    .clear-button {
+      font-size: 17px;
+    }
+
+    .display-calculation {
+      color: white;
+      font-size: 45px;
+      margin-bottom: 0px;
+      margin-top: 15px;
+    }
+
+  </style>
+</head>
+<body>
+  <p class="js-display-calculation display-calculation"></p>
+  <p>
+    <button class="all-buttons" onclick="
+      updateCalculation('1');
+    ">1</button>
+
+    <button class="all-buttons" onclick="
+      updateCalculation('2');
+    ">2</button>
+
+    <button class="all-buttons" onclick="
+      updateCalculation('3');
+    ">3</button>
+
+    <button class="all-buttons orange-button" onclick="
+      updateCalculation(' + ');
+    ">+</button>
+  </p>
+
+  <p>
+    <button class="all-buttons" onclick="
+      updateCalculation('4');
+    ">4</button>
+
+    <button class="all-buttons" onclick="
+      updateCalculation('5');
+    ">5</button>
+
+    <button class="all-buttons" onclick="
+      updateCalculation('6');
+    ">6</button>
+
+    <button class="all-buttons orange-button" onclick="
+      updateCalculation(' - ');
+    ">-</button>
+  </p>
+
+  <p>
+    <button class="all-buttons" onclick="
+      updateCalculation('7');
+    ">7</button>
+
+    <button class="all-buttons" onclick="
+      updateCalculation('8');
+    ">8</button>
+
+    <button class="all-buttons" onclick="
+      updateCalculation('9');
+    ">9</button>
+
+    <button class="all-buttons orange-button" onclick="
+      updateCalculation(' * ');
+    ">*</button>
+  </p>
+
+  <p>
+    <button class="all-buttons" onclick="
+      updateCalculation('0');
+    ">0</button>
+
+    <button class="all-buttons" onclick="
+      updateCalculation('.');
+    ">.</button>
+
+    <button class="all-buttons" onclick="
+      calculation = (eval(calculation));
+
+      localStorage.setItem('calculation', calculation);
+      displayCalculation();
+    ">=</button>
+
+    <button class="all-buttons orange-button" onclick="
+      updateCalculation(' / ');
+    ">/</button>
+  </p>
+
+  <button class="all-buttons clear-button" onclick="
+    calculation = '';
+    console.log(`Cleared. ${calculation}`);
+
+    localStorage.setItem('calculation', calculation);
+    displayCalculation();
+  ">Clear</button>
+
+  <script>
+    let calculation = localStorage.getItem('calculation');
+
+    displayCalculation();
+
+    function updateCalculation(buttonValue) {
+      calculation += buttonValue;
+      localStorage.setItem('calculation', calculation);
+
+      displayCalculation();
+    }
+
+    function displayCalculation() {
+      document.querySelector('.js-display-calculation')
+        .innerHTML = calculation;
+    }
+  </script>
+</body>
+</html>
